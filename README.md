@@ -1,10 +1,10 @@
-# Anagrams
+# Anagram
 
 In the project root directory, run the following command
 
-`node anagram.js`
+### `node anagram.js`
 
-# SB Movies
+# Movie App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

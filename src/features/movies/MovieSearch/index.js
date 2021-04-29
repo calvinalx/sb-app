@@ -27,7 +27,7 @@ const MovieSearch = () => {
         data-testid="movie-search-submit"
         type="submit"
         value="Search"
-        className="rounded-3xl px-3 py-1 cursor-pointer hover:bg-gray-400 outline-none"
+        className="rounded-3xl rounded-l-none px-2 py-1 cursor-pointer bg-gray-300 hover:bg-gray-400 outline-none"
       />
     </form>
   )
