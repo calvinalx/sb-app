@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 
-import { selectMovies } from "./moviesSlice"
+import { selectMovies } from "../moviesSlice"
 
 const MovieList = () => {
   const movies = useSelector(selectMovies)

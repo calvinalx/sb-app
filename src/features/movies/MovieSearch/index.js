@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
-import { fetchMovies } from "./moviesSlice"
+import { fetchMovies } from "../moviesSlice"
 
 const MovieSearch = () => {
   const [query, setQuery] = useState("")
