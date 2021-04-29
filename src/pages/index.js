@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 
 import Layout from "components/layout"
+import Loader from "components/loader"
 import MovieList from "../features/movies/MovieList"
-import MovieSearch from "features/movies/MovieSearch"
 
 import { fetchMovies } from "../features/movies/moviesSlice"
 import { useInfiniteScroll } from "common/hooks"
@@ -25,11 +25,14 @@ const Index = () => {
 
   return (
     <Layout>
-      <MovieSearch />
       <MovieList />
       <div ref={lastItemRef} />
 
-      {status === "loading" && <p>Loading</p>}
+      {status === "loading" && (
+        <div className="my-6">
+          <Loader />
+        </div>
+      )}
     </Layout>
   )
 }

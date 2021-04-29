@@ -5,7 +5,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import store from "./store"
 import routes from "./routes"
+
 import { fetchMovies } from "./features/movies/moviesSlice"
+
+import "./index.css"
 
 store.dispatch(fetchMovies())
 

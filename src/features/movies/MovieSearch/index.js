@@ -14,14 +14,21 @@ const MovieSearch = () => {
   }
 
   return (
-    <form onSubmit={handleSearch}>
+    <form onSubmit={handleSearch} className="flex border rounded-3xl">
       <input
         value={query}
         placeholder={title}
         data-testid="movie-search-input"
         onChange={(e) => setQuery(e.target.value)}
+        className="bg-transparent outline-none text-white pl-3 w-32"
+        required
       />
-      <input data-testid="movie-search-submit" type="submit" />
+      <input
+        data-testid="movie-search-submit"
+        type="submit"
+        value="Search"
+        className="rounded-3xl px-3 py-1 cursor-pointer hover:bg-gray-400 outline-none"
+      />
     </form>
   )
 }

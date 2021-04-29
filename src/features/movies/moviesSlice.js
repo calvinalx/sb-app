@@ -10,7 +10,7 @@ import { OMDB_URL } from "config"
 
 const DEFAULT_TITLE = "Marvel"
 
-export const moviesAdapter = createEntityAdapter()
+const moviesAdapter = createEntityAdapter()
 
 const initialState = moviesAdapter.getInitialState({
   title: DEFAULT_TITLE,
@@ -64,10 +64,11 @@ const moviesSlice = createSlice({
           renameProperty(movie, "imdbID", "id")
         )
         moviesAdapter.upsertMany(state, action.payload.movies)
-        state.numOfPages = Math.ceil(action.payload.count / 10)
         state.status = "succeeded"
+        state.numOfPages = Math.ceil(action.payload.count / 10)
       } else {
         state.status = "failed"
+        state.numOfPages = 0
       }
     },
     [fetchMovies.rejected]: (state, action) => {
@@ -80,8 +81,8 @@ const moviesSlice = createSlice({
       state.status = "loading"
     },
     [fetchMovie.fulfilled]: (state, action) => {
-      state.details = action.payload
       state.status = "succeeded"
+      state.details = action.payload
     },
     [fetchMovie.rejected]: (state, action) => {
       state.status = "failed"
