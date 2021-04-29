@@ -27,12 +27,7 @@ const Index = () => {
     <Layout>
       <MovieList />
       <div ref={lastItemRef} />
-
-      {status === "loading" && (
-        <div className="my-6">
-          <Loader />
-        </div>
-      )}
+      <div className="my-6">{status === "loading" && <Loader />}</div>
     </Layout>
   )
 }
